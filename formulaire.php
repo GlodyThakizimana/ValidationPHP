@@ -1,8 +1,4 @@
-
-<?php session_start();
-require_once('bdd_fausse.php');
-?>
-
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,13 +13,13 @@ require_once('bdd_fausse.php');
 <body>
 <?php require 'templates/header.php' ?>
 
-    <div>
-       <h1>Binvenue sur notre page</h1>
-    </div>
+<?php if (isset($_SESSION['isConnected']) && $_SESSION['isConnected'])
+    {
+        require_once('admin_form.php');
+    }
+?>
 
-    
-
-
+</div>
 
 
 
